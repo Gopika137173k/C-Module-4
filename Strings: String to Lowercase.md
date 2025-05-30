@@ -12,8 +12,37 @@ To convert a given string (e.g., `'HELLO'`) into lowercase using basic ASCII man
 4. **Print** the resulting lowercase string.
 
 ## 💻 Program
-Add code here
+```
+#include <stdio.h>
+
+int main() {
+    char ch[30];
+    int i = 0;
+
+    printf("Enter a string: ");
+    scanf("%s", ch);
+
+    while (ch[i] != '\0') {
+        if (ch[i] >= 'A' && ch[i] <= 'Z') {
+            ch[i] = ch[i] + 32;
+        }
+        i++;
+    }
+
+    printf("Lowercase string: %s\n", ch);
+
+    return 0;
+}
+```
 
 ## Output
+Sample Output 1:
+Enter a string: HELLO
+Lowercase string: hello
+
+Sample Output 2:
+Enter a string: WORLD
+Lowercase string: world
 
 ## Result
+Program was implemented and executed.
