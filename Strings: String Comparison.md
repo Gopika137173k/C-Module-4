@@ -34,8 +34,53 @@ If flag == 0, print Strings are same.
 10. End the program.
 
 ## Program
-Add code here
+```
+#include <stdio.h>
 
+int main() {
+    char c1[100], c2[100];
+    int i = 0, flag = 0;
+
+    printf("Enter the first string: ");
+    scanf("%[^\n]", c1);  // Read entire line including spaces until newline
+
+    getchar(); // To consume the leftover newline character
+
+    printf("Enter the second string: ");
+    scanf("%s", c2);      // Read until first whitespace
+
+    while (c1[i] != '\0' && c2[i] != '\0') {
+        if (c1[i] != c2[i]) {
+            flag = 1;
+            break;
+        }
+        i++;
+    }
+
+    // If lengths are different, strings are not same
+    if (c1[i] != '\0' || c2[i] != '\0') {
+        flag = 1;
+    }
+
+    if (flag == 0) {
+        printf("Strings are same.\n");
+    } else {
+        printf("Strings are different.\n");
+    }
+
+    return 0;
+}
+```
 ## Output
+Sample Output 1:
+Enter the first string: hello world
+Enter the second string: hello
+Strings are different.
+
+Sample Output 2:
+Enter the first string: example
+Enter the second string: example
+Strings are same.
 
 ## Result
+Program was implemented and executed.
